@@ -13,7 +13,9 @@ class Star {
     final int velocity = _siz;    
     _y += velocity;
     if (_y >= height) {
+      _x = (int)random(width);
       _y = 0;
+      _siz = (int)random(3) + 1;
     }
     _draw();
   }
@@ -35,7 +37,7 @@ class Stars {
   Star _stars[];
   
   Stars() {
-    final int count = 100;
+    final int count = 1000;
     _stars = new Star[count];
     for (int i = 0; i < _stars.length; ++i) {
       _stars[i] = new Star();
@@ -55,7 +57,8 @@ Stars stars;
 
 void setup()
 {
-  size(600, 400);
+  //size(600, 400);
+  fullScreen();
   stars = new Stars();
 }
 
